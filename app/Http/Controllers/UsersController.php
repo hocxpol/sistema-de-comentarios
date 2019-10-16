@@ -61,7 +61,7 @@ class UsersController extends Controller
     		'vat_number' => 'max:13',
     		'password' => 'required|confirmed|min:6',
     		'type' => 'required|boolean',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
     	$users = new Users;
@@ -134,7 +134,7 @@ class UsersController extends Controller
                 'name' => 'required|min:3|max:50',
                 'email' => 'email',
                 'vat_number' => 'max:13',
-                'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
             $users = Users::findOrFail($id); 
             $users->name = $request->name;
